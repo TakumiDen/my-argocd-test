@@ -1,0 +1,22 @@
+name: Update Manifest
+on:
+  workflow_dispatch: # 手動で実行するための設定
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      
+      - name: Update image tag
+        run: |
+          # guestbook-ui.yaml 内の replicas を 3 に書き換えるシミュレーション
+          sed -i 's/replicas: 1/replicas: 2/g' guestbook-ui.yaml
+          
+      - name: Commit and Push
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+          git add guestbook-ui.yaml
+          git commit -m "Auto-update replicas to 2"
+          git push
