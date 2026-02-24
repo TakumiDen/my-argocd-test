@@ -17,4 +17,4 @@ spec:
         image: hashicorp/http-echo
         args: ["-text", "GitOps Success!"]
         ports:
-        - containerPort: 80
+        - containerPort: 5678
