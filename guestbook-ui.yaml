@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: guestbook-ui
-        image: public.ecr.aws/docker/library/nginx:latest
+        image: gcr.io/google-samples/gb-frontend:v4
         ports:
         - containerPort: 80
