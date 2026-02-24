@@ -15,7 +15,7 @@ spec:
       containers:
       - name: guestbook-ui
         image: hashicorp/http-echo
-        args: ["-text", "GitOps Success!"]
+        args: ["-text", "GitOps Success!ありがとう！！！"]
         ports:
         - containerPort: 5678
 ---
